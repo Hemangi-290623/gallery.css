@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<STYLE>
+    *{
+    margin: 0px;
+    padding:0%;
+    box-sizing: border-box;
+}
+#wrapper{
+height: 100vh;
+overflow-x: hidden;
+overflow-y: auto;
+}
+.container{
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.container h1{
+    margin: 20px auto;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    width: 32%;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card img{
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px  #333;
+   height: 100%;
+    object-fit: cover;
+}
+.card:hover{
+   transform:  scale(1.03);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.3s;
+}
+.card:hover img{
+    filter: grayscale(0%);
+}
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+height: 20%;
+font-size: 16px;
+font-weight: 500;
+color: #fff;
+opacity: 0;
+border-radius: 0 0 10px 10px;
+background: linear-gradient(0deg, rgba (0,0,0,0.5)0% , rgb(0, 0, 0));
+transition: 0.3s;
+
+}
+
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
+</STYLE>
+<body>
+    <div id="wrapper">
+<div class="container">
+    <h1> My Gallery</h1>
+    <div class="gallery">
+        <figure class="card">
+            <img src="https://t4.ftcdn.net/jpg/05/82/58/19/360_F_582581917_bg7usxvCe27b3rnqzhSZXXwIFw4fYTjV.jpg" alt="chow chow">
+            <figcaption>CHOW CHOW</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://www.thelabradorsite.com/wp-content/uploads/2015/07/yellow-labrador-puppy-garden.jpg" alt="lab dog">
+            <figcaption>LABRADOR</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://topdogresource.com/wp-content/uploads/2021/12/Orange-Pomeranian-Standing-At-Park-1024x676.jpg" alt="pomeranian">
+            <figcaption>POMERANIAN</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://image.petmd.com/files/styles/863x625/public/2023-03/golden-retriever.jpg" alt="goldie">
+            <figcaption>GOLDEN RETRIEVER</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkm4TAN74xbBa4TdjYVgxBlprhFNjp5WDQaw&usqp=CAU" alt="pug">
+            <figcaption>PUG</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://cdn.britannica.com/08/234208-050-C9A21C4C/English-bulldog-dog.jpg" alt="bull dog">
+            <figcaption>BULL DOG</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="data:image/jpeg;base64,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" alt="chihuahua">
+            <figcaption>CHIHUAHUA</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://images.saymedia-content.com/.image/t_share/MTk2NzIzMTQ2NzMxMTAzMjUw/11-dogs-like-german-shepherd.png" alt="german shepherd">
+            <figcaption>GERMAN SHEPHERD</figcaption>
+
+        </figure>
+        <figure class="card">
+            <img src="https://plus.unsplash.com/premium_photo-1667443188826-44d48cb85159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aHVza3l8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="husky">
+            <figcaption>SIBERIAN HUSKY</figcaption>
+
+        </figure>
+    </div>
+</div>
+
+
+
+
+    </div>
+    
+</body>
+</html>
